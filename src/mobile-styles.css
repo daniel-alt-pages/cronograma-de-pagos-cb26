@@ -1,0 +1,313 @@
+/* ===== MOBILE OPTIMIZATIONS ===== */
+
+/* Mobile Breakpoints */
+@media (max-width: 768px) {
+
+    /* Ocultar sidebar en móvil y usar bottom navigation */
+    .mobile-hide-sidebar {
+        display: none !important;
+    }
+
+    /* Header más compacto en móvil */
+    .mobile-header {
+        height: auto !important;
+        min-height: 3.5rem;
+        padding: 0.75rem 1rem !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 0.75rem;
+    }
+
+    .mobile-header-title {
+        font-size: 1rem !important;
+        line-height: 1.25rem !important;
+    }
+
+    /* Tarjetas de resumen en columna en móvil */
+    .mobile-stats-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 0.75rem !important;
+    }
+
+    .mobile-stat-card {
+        padding: 0.75rem !important;
+        flex-direction: row !important;
+    }
+
+    .mobile-stat-icon {
+        padding: 0.5rem !important;
+    }
+
+    /* Teacher rows más compactas */
+    .mobile-teacher-row {
+        padding: 0.75rem !important;
+    }
+
+    .mobile-teacher-avatar {
+        width: 2rem !important;
+        height: 2rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    .mobile-teacher-name {
+        font-size: 0.875rem !important;
+    }
+
+    .mobile-teacher-hours {
+        font-size: 0.625rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+
+    /* Botones de acción más pequeños */
+    .mobile-action-btn {
+        padding: 0.5rem !important;
+        font-size: 0.625rem !important;
+    }
+
+    /* Modal full screen en móvil */
+    .mobile-modal {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Bottom navigation para móvil */
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 50;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.5rem 0;
+    }
+
+    .mobile-nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem;
+        color: #94a3b8;
+        transition: all 0.3s;
+        border-radius: 0.5rem;
+        flex: 1;
+        max-width: 120px;
+    }
+
+    .mobile-nav-btn.active {
+        color: #818cf8;
+        background: rgba(79, 70, 229, 0.1);
+    }
+
+    .mobile-nav-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .mobile-nav-label {
+        font-size: 0.625rem;
+        font-weight: 600;
+    }
+
+    /* Ajustar el padding del contenido principal */
+    .mobile-main-content {
+        padding: 0.75rem !important;
+        padding-bottom: 5rem !important;
+        /* Espacio para bottom nav */
+    }
+
+    /* Botón flotante de Nequi más accesible */
+    .mobile-fab {
+        bottom: 5.5rem !important;
+        /* Sobre la bottom nav */
+        right: 1rem !important;
+        width: 3rem !important;
+        height: 3rem !important;
+        padding: 0.75rem !important;
+    }
+
+    .mobile-fab-icon {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+    }
+
+    /* Week selector horizontal scroll */
+    .mobile-week-selector {
+        display: flex;
+        overflow-x: auto;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-week-selector::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-week-btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Input de valor hora más compacto */
+    .mobile-rate-input {
+        padding: 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Expandir sesiones en acordeón móvil */
+    .mobile-session-item {
+        padding: 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    .mobile-session-date {
+        min-width: 2.5rem !important;
+    }
+
+    /* Tabla financiera responsive */
+    .mobile-finance-table {
+        font-size: 0.75rem !important;
+    }
+
+    .mobile-finance-table th,
+    .mobile-finance-table td {
+        padding: 0.5rem !important;
+    }
+
+    /* Toast notifications */
+    .mobile-toast {
+        bottom: 6rem !important;
+        /* Sobre bottom nav */
+        right: 1rem !important;
+        left: 1rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Period title */
+    .mobile-period-title {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Teacher count */
+    .mobile-teacher-count {
+        font-size: 0.625rem !important;
+    }
+
+    /* Preview report area */
+    .mobile-preview-area {
+        min-height: 10rem !important;
+        font-size: 0.625rem !important;
+    }
+
+    /* Copy buttons */
+    .mobile-copy-btn {
+        padding: 0.625rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Reduce spacing between elements */
+    .mobile-spacing-sm {
+        gap: 0.5rem !important;
+    }
+
+    .mobile-spacing-md {
+        gap: 0.75rem !important;
+    }
+}
+
+/* Extra small screens (< 375px) */
+@media (max-width: 375px) {
+    .mobile-header-title {
+        font-size: 0.875rem !important;
+    }
+
+    .mobile-teacher-name {
+        font-size: 0.75rem !important;
+    }
+
+    .mobile-week-btn {
+        padding: 0.375rem 0.75rem !important;
+        font-size: 0.625rem !important;
+    }
+
+    .mobile-stat-card {
+        padding: 0.5rem !important;
+    }
+}
+
+/* Landscape mode optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+    .mobile-bottom-nav {
+        padding: 0.25rem 0;
+    }
+
+    .mobile-nav-btn {
+        padding: 0.25rem 0.75rem;
+    }
+
+    .mobile-nav-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .mobile-header {
+        min-height: 3rem;
+    }
+
+    .mobile-fab {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        bottom: 4rem !important;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Increase touch targets */
+    button,
+    a,
+    input {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover states on touch devices */
+    .hover\:bg-slate-50:hover,
+    .hover\:bg-slate-100:hover,
+    .hover\:bg-slate-200:hover {
+        background-color: transparent;
+    }
+
+    /* Add active states instead */
+    button:active,
+    a:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .mobile-bottom-nav {
+        padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    }
+
+    .mobile-main-content {
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    .mobile-fab {
+        bottom: calc(5.5rem + env(safe-area-inset-bottom)) !important;
+    }
+}

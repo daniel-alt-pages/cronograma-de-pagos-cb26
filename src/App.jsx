@@ -296,7 +296,7 @@ const PaymentModal = ({ account, onClose, onCopy }) => {
 // --- COMPONENTES ---
 
 const Toast = ({ message }) => (
-  <div className="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-5 duration-300 z-[100]">
+  <div className="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-5 duration-300 z-[100] mobile-toast">
     <div className="bg-emerald-500 rounded-full p-1"><Icons.Check /></div>
     <span className="font-semibold text-sm">{message}</span>
   </div>
@@ -306,7 +306,7 @@ const Toast = ({ message }) => (
 const NequiFloatingButton = () => (
   <button
     onClick={openNequiApp}
-    className="fixed bottom-20 right-6 z-40 bg-[#DA0081] text-white p-4 rounded-full shadow-2xl hover:bg-[#b5006b] hover:scale-110 transition-all duration-300 group"
+    className="fixed bottom-20 right-6 z-40 bg-[#DA0081] text-white p-4 rounded-full shadow-2xl hover:bg-[#b5006b] hover:scale-110 transition-all duration-300 group mobile-fab"
     title="Abrir Nequi"
   >
     <Icons.Smartphone />
@@ -491,8 +491,8 @@ export default function App() {
   return (
     <div className="flex h-screen bg-slate-50 text-slate-800 font-sans overflow-hidden">
 
-      {/* 1. SIDEBAR ULTRA-COMPACTO */}
-      <aside className="w-20 bg-slate-900 flex flex-col items-center py-6 z-30 flex-shrink-0 shadow-xl">
+      {/* 1. SIDEBAR - OCULTO EN MÓVIL */}
+      <aside className="w-20 bg-slate-900 flex flex-col items-center py-6 z-30 flex-shrink-0 shadow-xl mobile-hide-sidebar">
         <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg mb-8">
           <Icons.Logo />
         </div>
@@ -520,21 +520,21 @@ export default function App() {
       {/* 2. AREA PRINCIPAL */}
       <div className="flex-1 flex flex-col min-w-0">
 
-        {/* 2.1 HEADER UNIFICADO */}
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-20 flex-shrink-0">
+        {/* 2.1 HEADER RESPONSIVO */}
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-20 flex-shrink-0 mobile-header">
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-bold tracking-tight text-slate-800 hidden md:block">
+            <h1 className="text-xl font-bold tracking-tight text-slate-800 mobile-header-title">
               {tab === 'reports' ? 'Gestión de Nómina' : 'Dashboard Financiero'}
             </h1>
             {tab === 'reports' && (
               <>
                 <div className="h-6 w-px bg-slate-200 mx-2 hidden md:block"></div>
-                <div className="flex items-center gap-2 overflow-x-auto max-w-[200px] md:max-w-none no-scrollbar">
+                <div className="flex items-center gap-2 overflow-x-auto max-w-[200px] md:max-w-none no-scrollbar mobile-week-selector">
                   {INITIAL_DATA.map(w => (
                     <button
                       key={w.id}
                       onClick={() => setSelectedWeek(w.id)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all ${selectedWeek === w.id ? 'bg-slate-900 text-white shadow-md' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all mobile-week-btn ${selectedWeek === w.id ? 'bg-slate-900 text-white shadow-md' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
                     >
                       {w.name}
                     </button>
@@ -544,7 +544,7 @@ export default function App() {
             )}
           </div>
 
-          <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
+          <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 mobile-rate-input">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Valor Hora</span>
             <div className="flex items-center gap-1">
               <span className="text-slate-400 font-bold text-sm">$</span>
@@ -559,32 +559,32 @@ export default function App() {
         </header>
 
         {/* 2.2 CONTENIDO */}
-        <main className="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth bg-slate-50/50">
+        <main className="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth bg-slate-50/50 mobile-main-content">
           <div className="max-w-6xl mx-auto">
 
             {tab === 'reports' && (
               <div className="space-y-6 pb-20 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="flex items-baseline justify-between">
-                  <h2 className="text-lg font-bold text-slate-700">Periodo: {current.range}</h2>
-                  <span className="text-xs font-medium text-slate-400">{current.teachers.length} docentes activos</span>
+                  <h2 className="text-lg font-bold text-slate-700 mobile-period-title">Periodo: {current.range}</h2>
+                  <span className="text-xs font-medium text-slate-400 mobile-teacher-count">{current.teachers.length} docentes activos</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mobile-stats-grid">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 mobile-stat-card">
                     <div className="bg-blue-50 p-2 rounded-lg text-blue-600"><Icons.Clock /></div>
                     <div>
                       <p className="text-[10px] font-bold text-slate-400 uppercase">Horas Totales</p>
                       <p className="text-xl font-bold text-slate-800">{current.teachers.reduce((a, t) => a + t.totalHours, 0)}h</p>
                     </div>
                   </div>
-                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 mobile-stat-card">
                     <div className="bg-emerald-50 p-2 rounded-lg text-emerald-600"><Icons.Dollar /></div>
                     <div>
                       <p className="text-[10px] font-bold text-slate-400 uppercase">Total a Pagar</p>
                       <p className="text-xl font-bold text-slate-800">{formatMoney(current.teachers.reduce((a, t) => a + t.totalHours, 0) * rate)}</p>
                     </div>
                   </div>
-                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                  <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4 mobile-stat-card">
                     <div className="bg-purple-50 p-2 rounded-lg text-purple-600"><Icons.Users /></div>
                     <div>
                       <p className="text-[10px] font-bold text-slate-400 uppercase">Docentes</p>
