@@ -316,7 +316,7 @@ const NequiFloatingButton = () => (
   </button>
 );
 
-const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPayment }) => {
+const TeacherRow = ({ teacher, weekRange, weekName, weekId, hourlyRate, onCopy, onOpenPayment, isPaid, onTogglePaid }) => {
   const [expanded, setExpanded] = useState(false);
   const [mode, setMode] = useState('detailed');
 
@@ -342,27 +342,50 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
   const previewText = mode === 'detailed' ? getLong() : getShort();
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 relative ${expanded ? 'border-indigo-300 ring-2 ring-indigo-50' : 'border-slate-200 hover:border-indigo-200'}`}>
+    <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 relative ${isPaid ? 'border-emerald-300 bg-emerald-50/30' :
+      expanded ? 'border-indigo-300 ring-2 ring-indigo-50' : 'border-slate-200 hover:border-indigo-200'
+      }`}>
       <div className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
 
         {/* INFO PRINCIPAL */}
-        <div
-          className="flex items-center gap-4 flex-1 cursor-pointer"
-          onClick={() => setExpanded(!expanded)}
-        >
-          <div className="w-10 h-10 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-md flex-shrink-0">
-            {teacher.name.charAt(0)}
+        <div className="flex items-center gap-4 flex-1">
+          {/* CHECKBOX DE PAGO */}
+          <div className="flex-shrink-0">
+            <input
+              type="checkbox"
+              checked={isPaid}
+              onChange={() => onTogglePaid(weekId, teacher.name)}
+              className="w-5 h-5 rounded border-2 border-slate-300 text-emerald-600 focus:ring-2 focus:ring-emerald-500 cursor-pointer transition-all"
+              onClick={(e) => e.stopPropagation()}
+            />
           </div>
-          <div>
-            <h4 className="font-bold text-lg text-slate-800">{teacher.name}</h4>
-            <div className="flex items-center gap-3 text-xs text-slate-500 mt-1">
-              <span className="flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">
-                <Icons.Clock /> {teacher.totalHours}h
-              </span>
-              <span className="text-slate-300">-</span>
-              <span className="font-bold text-emerald-600">
-                {formatMoney(cost)}
-              </span>
+
+          <div
+            className="flex items-center gap-4 flex-1 cursor-pointer"
+            onClick={() => setExpanded(!expanded)}
+          >
+            <div className={`w-10 h-10 rounded-lg text-white flex items-center justify-center font-bold text-lg shadow-md flex-shrink-0 ${isPaid ? 'bg-emerald-500' : 'bg-indigo-600'
+              }`}>
+              {teacher.name.charAt(0)}
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h4 className={`font-bold text-lg ${isPaid ? 'text-emerald-700 line-through' : 'text-slate-800'
+                  }`}>{teacher.name}</h4>
+                {isPaid && (
+                  <span className="badge badge-success text-[10px] px-2 py-0.5">✓ Pagado</span>
+                )}
+              </div>
+              <div className="flex items-center gap-3 text-xs text-slate-500 mt-1">
+                <span className="flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-semibold">
+                  <Icons.Clock className="w-3 h-3" /> {teacher.totalHours}h
+                </span>
+                <span className="text-slate-300">-</span>
+                <span className={`font-bold ${isPaid ? 'text-emerald-600 line-through' : 'text-emerald-600'
+                  }`}>
+                  {formatMoney(cost)}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -377,10 +400,13 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
                 e.stopPropagation();
                 onOpenPayment(nequiAccount);
               }}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all border bg-purple-50 text-purple-700 border-purple-100 hover:bg-purple-100 active:scale-95"
+              className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all border ${isPaid
+                ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
+                : 'bg-purple-50 text-purple-700 border-purple-100 hover:bg-purple-100'
+                } active:scale-95`}
             >
-              <Icons.Wallet />
-              Pagar
+              <Icons.Wallet className="w-4 h-4" />
+              {isPaid ? 'Ver' : 'Pagar'}
             </button>
           )}
 
@@ -388,7 +414,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
             onClick={(e) => { e.stopPropagation(); setExpanded(!expanded); }}
             className={`p-2 rounded-lg transition-colors ${expanded ? 'bg-indigo-50 text-indigo-600' : 'bg-slate-50 text-slate-400 hover:bg-slate-100'}`}
           >
-            {expanded ? <Icons.Up /> : <Icons.Down />}
+            {expanded ? <Icons.Up className="w-4 h-4" /> : <Icons.Down className="w-4 h-4" />}
           </button>
         </div>
       </div>
@@ -467,10 +493,77 @@ export default function App() {
   // ESTADO PARA EL MODAL DE PAGO
   const [paymentAccount, setPaymentAccount] = useState(null);
 
+  // Duración del cache en días (configurable - actualmente 30 días)
+  const CACHE_DURATION_DAYS = 30;
+  const CACHE_DURATION_MS = CACHE_DURATION_DAYS * 24 * 60 * 60 * 1000;
+
+  // ESTADO PARA TRACKING DE PAGOS (guardado en localStorage con timestamp)
+  const [paidTeachers, setPaidTeachers] = useState(() => {
+    try {
+      const saved = localStorage.getItem('paidTeachers');
+      const cacheTimestamp = localStorage.getItem('paidTeachers_timestamp');
+
+      if (saved && cacheTimestamp) {
+        const age = Date.now() - parseInt(cacheTimestamp);
+
+        // Si el cache tiene menos de CACHE_DURATION_DAYS, usarlo
+        if (age < CACHE_DURATION_MS) {
+          return JSON.parse(saved);
+        } else {
+          // Cache expirado, limpiar
+          localStorage.removeItem('paidTeachers');
+          localStorage.removeItem('paidTeachers_timestamp');
+          return {};
+        }
+      }
+      return {};
+    } catch (error) {
+      console.error('Error loading paid teachers cache:', error);
+      return {};
+    }
+  });
+
+  // Guardar en localStorage cada vez que cambia, con timestamp
+  useEffect(() => {
+    try {
+      localStorage.setItem('paidTeachers', JSON.stringify(paidTeachers));
+      localStorage.setItem('paidTeachers_timestamp', Date.now().toString());
+
+      // Mostrar info del cache en consola (opcional, comentar en producción)
+      const expiryDate = new Date(Date.now() + CACHE_DURATION_MS);
+      console.log(`💾 Datos guardados. Expiran el: ${expiryDate.toLocaleDateString('es-CO')} a las ${expiryDate.toLocaleTimeString('es-CO')}`);
+    } catch (error) {
+      console.error('Error saving paid teachers cache:', error);
+    }
+  }, [paidTeachers]);
+
   const current = INITIAL_DATA.find(w => w.id === selectedWeek);
 
   const totalH = INITIAL_DATA.reduce((acc, w) => acc + w.teachers.reduce((t, teach) => t + teach.totalHours, 0), 0);
   const total$ = totalH * rate;
+
+  // Función para generar un ID único por profesor y semana
+  const getTeacherId = (weekId, teacherName) => `week${weekId}-${teacherName.toLowerCase().replace(/\s+/g, '-')}`;
+
+  // Función para marcar/desmarcar como pagado
+  const togglePaid = (weekId, teacherName) => {
+    const id = getTeacherId(weekId, teacherName);
+    const newValue = !paidTeachers[id];
+
+    setPaidTeachers(prev => ({
+      ...prev,
+      [id]: newValue ? Date.now() : undefined // Guardar timestamp cuando se marca como pagado
+    }));
+
+    setToast(paidTeachers[id] ? '❌ Marcado como no pagado' : '✅ Marcado como pagado');
+    setTimeout(() => setToast(null), 2000);
+  };
+
+  // Verificar si un profesor está pagado
+  const isPaid = (weekId, teacherName) => {
+    const id = getTeacherId(weekId, teacherName);
+    return !!paidTeachers[id];
+  };
 
   const handleCopy = (text, type) => {
     const el = document.createElement("textarea");
@@ -598,11 +691,14 @@ export default function App() {
                     <TeacherRow
                       key={i}
                       teacher={teacher}
+                      weekId={selectedWeek}
                       weekName={current.name}
                       weekRange={current.range}
                       hourlyRate={rate}
                       onCopy={handleCopy}
-                      onOpenPayment={setPaymentAccount} // Pasamos la función para abrir el modal
+                      onOpenPayment={setPaymentAccount}
+                      isPaid={isPaid(selectedWeek, teacher.name)}
+                      onTogglePaid={togglePaid}
                     />
                   ))}
                 </div>
