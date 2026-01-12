@@ -4,6 +4,7 @@ import './index.css'
 import './additional-styles.css'
 import './mobile-styles.css'
 import './design-improvements.css'
+import './minimalist.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

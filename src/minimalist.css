@@ -1,0 +1,327 @@
+/* ===== MINIMALIST PROFESSIONAL DESIGN ===== */
+
+/* Reset some overly styled elements */
+* {
+    letter-spacing: normal;
+}
+
+/* Clean background - sin patrones */
+body,
+.bg-slate-50 {
+    background: #fafafa !important;
+}
+
+/* Sidebar minimalista */
+aside {
+    background: #ffffff !important;
+    border-right: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+}
+
+/* Logo más sutil */
+aside .bg-indigo-600 {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+}
+
+/* Header limpio */
+header {
+    background: #ffffff !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Tarjetas minimalistas - sin bordes pesados */
+.bg-white.rounded-xl.border {
+    border: 1px solid #f3f4f6 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    border-radius: 12px !important;
+}
+
+/* Stat cards limpias */
+.bg-white.rounded-xl.border.shadow-sm {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Icon containers más sutiles */
+.bg-blue-50,
+.bg-emerald-50,
+.bg-purple-50,
+.bg-orange-100 {
+    opacity: 0.6;
+}
+
+/* Botones más limpios */
+button {
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+}
+
+/* Week selector más minimalista */
+.bg-slate-900.text-white {
+    background: #18181b !important;
+    border-radius: 8px !important;
+}
+
+.bg-slate-100.text-slate-500 {
+    background: transparent !important;
+    border: 1px solid #e5e7eb !important;
+    color: #71717a !important;
+}
+
+.bg-slate-100.text-slate-500:hover {
+    background: #fafafa !important;
+    border-color: #d4d4d8 !important;
+}
+
+/* Teacher rows minimalistas */
+.teacher-row-enhanced,
+div[class*="rounded-xl shadow-sm border"] {
+    background: #ffffff !important;
+    border: 1px solid #f3f4f6 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+div[class*="rounded-xl shadow-sm border"]:hover {
+    border-color: #e5e7eb !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+    transform: none !important;
+}
+
+/* Avatar más limpio */
+.bg-indigo-600.rounded-lg {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    box-shadow: none !important;
+}
+
+.bg-emerald-500.rounded-lg {
+    background: #10b981 !important;
+    box-shadow: none !important;
+}
+
+/* Badges minimalistas */
+.badge {
+    background: #f4f4f5 !important;
+    color: #3f3f46 !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+}
+
+.badge-success {
+    background: #dcfce7 !important;
+    color: #166534 !important;
+}
+
+/* Checkbox más limpio */
+input[type="checkbox"] {
+    border-radius: 4px !important;
+    border-width: 1.5px !important;
+    border-color: #d4d4d8 !important;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+}
+
+/* Pago pagado - fondo muy sutil */
+.border-emerald-300 {
+    background: rgba(16, 185, 129, 0.02) !important;
+    border-color: #d1fae5 !important;
+}
+
+/* Botones de acción limpios */
+.bg-purple-50.text-purple-700 {
+    background: #faf5ff !important;
+    border-color: #f3e8ff !important;
+    color: #7c3aed !important;
+}
+
+.bg-purple-50.text-purple-700:hover {
+    background: #f3e8ff !important;
+}
+
+.bg-emerald-50.text-emerald-700 {
+    background: #ecfdf5 !important;
+    border-color: #d1fae5 !important;
+    color: #059669 !important;
+}
+
+/* Botón Nequi más profesional */
+.bg-\[.DA0081\],
+button[class*="DA0081"] {
+    background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%) !important;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2) !important;
+}
+
+/* Toast más limpio */
+.bg-slate-900.text-white.rounded-xl {
+    background: #18181b !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Modal más limpio */
+.shadow-2xl {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Tabla más minimalista */
+table thead {
+    background: #fafafa !important;
+    border-bottom: 2px solid #f3f4f6 !important;
+}
+
+table tbody tr:hover {
+    background: #fafafa !important;
+}
+
+table tbody td {
+    border-bottom: 1px solid #f9fafb !important;
+}
+
+/* Vista previa del reporte */
+.bg-slate-900.rounded-lg {
+    background: #18181b !important;
+    border-radius: 10px !important;
+}
+
+/* Botón primario más limpio */
+.bg-indigo-600 {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2) !important;
+}
+
+.bg-indigo-600:hover {
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Typography más limpia */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+}
+
+.font-bold {
+    font-weight: 600 !important;
+}
+
+.font-black {
+    font-weight: 700 !important;
+}
+
+/* Inputs más limpios */
+input[type="number"] {
+    font-weight: 500 !important;
+}
+
+/* Bottom nav minimalista */
+.mobile-bottom-nav {
+    background: #ffffff !important;
+    border-top: 1px solid #f3f4f6 !important;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Espaciado más generoso */
+.p-5 {
+    padding: 1.5rem !important;
+}
+
+.p-6 {
+    padding: 2rem !important;
+}
+
+/* Sin uppercase en labels pequeños */
+.uppercase {
+    text-transform: none !important;
+    font-size: 0.75rem !important;
+    color: #71717a !important;
+    font-weight: 500 !important;
+}
+
+/* Divisores más sutiles */
+.border-slate-100,
+.border-slate-200 {
+    border-color: #f3f4f6 !important;
+}
+
+/* Sessions desglose más limpio */
+div[class*="border border-slate-100 bg-slate-50"] {
+    background: #fafafa !important;
+    border-color: #f3f4f6 !important;
+}
+
+div[class*="border border-slate-100 bg-slate-50"]:hover {
+    background: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+/* Status badges limpios */
+.bg-blue-100,
+.bg-orange-100 {
+    background: #f4f4f5 !important;
+}
+
+.text-blue-700 {
+    color: #3f3f46 !important;
+}
+
+.text-orange-700 {
+    color: #3f3f46 !important;
+}
+
+/* Animaciones más sutiles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ring effects más sutiles */
+.ring-2 {
+    box-shadow: 0 0 0 1px #f3f4f6 !important;
+}
+
+/* Focus states limpios */
+*:focus {
+    outline: none !important;
+}
+
+*:focus-visible {
+    outline: 2px solid #e5e7eb !important;
+    outline-offset: 2px !important;
+}
+
+/* Responsive - mantener minimalismo */
+@media (max-width: 768px) {
+    .mobile-stat-card {
+        background: #ffffff !important;
+        border: 1px solid #f3f4f6 !important;
+    }
+
+    .mobile-teacher-row {
+        border: 1px solid #f3f4f6 !important;
+    }
+}
+
+/* Print styles minimalistas */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}
