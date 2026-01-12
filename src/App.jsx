@@ -12,7 +12,7 @@ const ACCOUNT_DB = {
   "josé": { name: "Jose Manuel Londoño", number: "3158742494", area: "Ciencias" },
   "fanny": { name: "Fanny Novoa", number: "3212257303", area: "Ciencias" },
   "jesus": { name: "Jesus Tovar", number: "3202194904", area: "Ciencias" },
-  "viviana": { name: "Viviana Rincón", number: "3160539096", area: "Inglés/Matemáticas" }, 
+  "viviana": { name: "Viviana Rincón", number: "3160539096", area: "Inglés/Matemáticas" },
   "sara": { name: "Sara Palacio", number: "3204747141", area: "Matemáticas" },
   "aida": { name: "Aida Oliva", number: "3182813281", area: "Matemáticas" },
   "luis": { name: "Aida Oliva", number: "3182813281", area: "Matemáticas/Taller" },
@@ -34,31 +34,43 @@ const INITIAL_DATA = [
     name: "Semana 1",
     range: "15 - 20 Dic",
     teachers: [
-      { name: "Viviana Rincón", totalHours: 8, sessions: [
+      {
+        name: "Viviana Rincón", totalHours: 8, sessions: [
           { date: "15 Dic", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Introducción", hours: 2 },
           { date: "16 Dic", time: "2:00 PM - 4:00 PM", type: "Teórica", topic: "Pronouns, Verb to Be", hours: 2 },
           { date: "17 Dic", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 1", hours: 2 },
           { date: "18 Dic", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 1", hours: 2 }
-      ]},
-      { name: "José Londoño", totalHours: 6, sessions: [
+        ]
+      },
+      {
+        name: "José Londoño", totalHours: 6, sessions: [
           { date: "15 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Célula y Organelos", hours: 2 },
           { date: "19 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Taller 1", hours: 2 },
           { date: "20 Dic", time: "8:00 PM - 10:00 PM", type: "Práctica", topic: "Taller 2", hours: 2 }
-      ]},
-      { name: "Carlos Murillo", totalHours: 4, sessions: [
+        ]
+      },
+      {
+        name: "Carlos Murillo", totalHours: 4, sessions: [
           { date: "16 Dic", time: "4:00 PM - 6:00 PM", type: "Teórica", topic: "Constitución 1991", hours: 2 },
           { date: "18 Dic", time: "4:00 PM - 6:00 PM", type: "Teórica", topic: "Los Derechos", hours: 2 }
-      ]},
-      { name: "Alexandra Nikol", totalHours: 4, sessions: [
+        ]
+      },
+      {
+        name: "Alexandra Nikol", totalHours: 4, sessions: [
           { date: "17 Dic", time: "6:00 PM - 8:00 PM", type: "Teórica", topic: "Textos Continuos", hours: 2 },
           { date: "19 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 1", hours: 2 }
-      ]},
-      { name: "Luis Gutiérrez", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Luis Gutiérrez", totalHours: 2, sessions: [
           { date: "19 Dic", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 2", hours: 2 }
-      ]},
-      { name: "Hellen Tovar", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Hellen Tovar", totalHours: 2, sessions: [
           { date: "20 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Minisimulacro 1", hours: 2 }
-      ]}
+        ]
+      }
     ]
   },
   {
@@ -66,26 +78,32 @@ const INITIAL_DATA = [
     name: "Semana 2",
     range: "22 - 27 Dic",
     teachers: [
-      { name: "Viviana Rincón", totalHours: 10, sessions: [
+      {
+        name: "Viviana Rincón", totalHours: 10, sessions: [
           { date: "23 Dic", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Professions, Auxiliaries...", hours: 2 },
           { date: "23 Dic", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 1 (2) y Taller 2", hours: 2 },
           { date: "23 Dic", time: "4:00 PM - 6:00 PM", type: "Práctica", topic: "Taller 1 (2) y Taller 3", hours: 2 },
           { date: "24 Dic", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Animals, Transports...", hours: 2 },
           { date: "25 Dic", time: "2:00 PM - 4:00 PM", type: "Teórica", topic: "Hobbies & Sports...", hours: 2 }
-      ]},
-      { name: "Sofía Suarez", totalHours: 4, sessions: [
+        ]
+      },
+      {
+        name: "Sofía Suarez", totalHours: 4, sessions: [
           { date: "27 Dic", time: "6:00 PM - 8:00 PM", type: "Teórica", topic: "Información explícita", hours: 2 },
           { date: "27 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Oración y tipos", hours: 2 }
-      ]},
-      { name: "Carlos Murillo", totalHours: 4, sessions: [
+        ]
+      },
+      {
+        name: "Carlos Murillo", totalHours: 4, sessions: [
           { date: "26 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 1", hours: 2 },
           { date: "27 Dic", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Historia del Mundo", hours: 2 }
-      ]},
-      { name: "Daniel Cuspoca", totalHours: 2, sessions: [{ date: "22 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Análisis Dimensional", hours: 2 }]},
-      { name: "José Manuel", totalHours: 2, sessions: [{ date: "23 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Átomo y Tabla", hours: 2 }]},
-      { name: "Hellen Tovar", totalHours: 2, sessions: [{ date: "25 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 3", hours: 2 }]},
-      { name: "Luis Gutiérrez", totalHours: 2, sessions: [{ date: "26 Dic", time: "4:00 PM - 6:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }]},
-      { name: "Jesus Tovar", totalHours: 2, sessions: [{ date: "26 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Ecosistema", hours: 2 }]}
+        ]
+      },
+      { name: "Daniel Cuspoca", totalHours: 2, sessions: [{ date: "22 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Análisis Dimensional", hours: 2 }] },
+      { name: "José Manuel", totalHours: 2, sessions: [{ date: "23 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Átomo y Tabla", hours: 2 }] },
+      { name: "Hellen Tovar", totalHours: 2, sessions: [{ date: "25 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 3", hours: 2 }] },
+      { name: "Luis Gutiérrez", totalHours: 2, sessions: [{ date: "26 Dic", time: "4:00 PM - 6:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }] },
+      { name: "Jesus Tovar", totalHours: 2, sessions: [{ date: "26 Dic", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Ecosistema", hours: 2 }] }
     ]
   },
   {
@@ -93,22 +111,28 @@ const INITIAL_DATA = [
     name: "Semana 3",
     range: "28 Dic - 03 Ene",
     teachers: [
-      { name: "Alexandra Nikol", totalHours: 2, sessions: [{ date: "29 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }]},
-      { name: "José Londoño", totalHours: 6, sessions: [
+      { name: "Alexandra Nikol", totalHours: 2, sessions: [{ date: "29 Dic", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }] },
+      {
+        name: "José Londoño", totalHours: 6, sessions: [
           { date: "29 Dic", time: "8:00 PM - 10:00 PM", type: "Práctica", topic: "Taller 2", hours: 2 },
           { date: "30 Dic", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 3", hours: 2 },
           { date: "03 Ene", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }
-      ]},
-      { name: "Luis Gutiérrez", totalHours: 4, sessions: [
+        ]
+      },
+      {
+        name: "Luis Gutiérrez", totalHours: 4, sessions: [
           { date: "30 Dic", time: "4:00 PM - 6:00 PM", type: "Práctica", topic: "Taller 5", hours: 2 },
           { date: "31 Dic", time: "10:00 AM - 12:00 PM", type: "Práctica", topic: "Taller 6", hours: 2 }
-      ]},
-      { name: "Sofía Suarez", totalHours: 2, sessions: [{ date: "02 Ene", time: "6:00 PM - 8:00 PM", type: "Teórica", topic: "Cohesión Textual", hours: 2 }]},
-      { name: "Carlos Murillo", totalHours: 4, sessions: [
+        ]
+      },
+      { name: "Sofía Suarez", totalHours: 2, sessions: [{ date: "02 Ene", time: "6:00 PM - 8:00 PM", type: "Teórica", topic: "Cohesión Textual", hours: 2 }] },
+      {
+        name: "Carlos Murillo", totalHours: 4, sessions: [
           { date: "02 Ene", time: "8:00 PM - 10:00 PM", type: "Práctica", topic: "Retroalimentación 1", hours: 2 },
           { date: "03 Ene", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Historia de LATAM", hours: 2 }
-      ]},
-      { name: "Hellen Tovar", totalHours: 2, sessions: [{ date: "03 Ene", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 5", hours: 2 }]}
+        ]
+      },
+      { name: "Hellen Tovar", totalHours: 2, sessions: [{ date: "03 Ene", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Taller 5", hours: 2 }] }
     ]
   },
   {
@@ -116,41 +140,59 @@ const INITIAL_DATA = [
     name: "Semana 4",
     range: "05 - 10 Ene",
     teachers: [
-      { name: "Viviana Rincón", totalHours: 8, sessions: [
+      {
+        name: "Viviana Rincón", totalHours: 8, sessions: [
           { date: "05 Ene", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Theoretical 5", hours: 2 },
           { date: "05 Ene", time: "2:00 PM - 4:00 PM", type: "Práctica", topic: "Taller 2 y 3", hours: 2 },
           { date: "06 Ene", time: "8:00 AM - 10:00 AM", type: "Teórica", topic: "Theoretical 6", hours: 2 },
           { date: "06 Ene", time: "10:00 AM - 12:00 PM", type: "Práctica", topic: "Taller 4", hours: 2 }
-      ]},
-      { name: "David Cardona", totalHours: 5, sessions: [
+        ]
+      },
+      {
+        name: "David Cardona", totalHours: 5, sessions: [
           { date: "05 Ene", time: "5:00 PM - 7:00 PM", type: "Práctica", topic: "Taller 3 y 4", hours: 2 },
           { date: "08 Ene", time: "4:00 PM - 6:00 PM", type: "Teórica", topic: "Historia de Colombia", hours: 2 },
           { date: "10 Ene", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Pensamiento Social", hours: 2 }
-      ]}, 
-      { name: "Carlos Murillo", totalHours: 1, sessions: [
+        ]
+      },
+      {
+        name: "Carlos Murillo", totalHours: 1, sessions: [
           { date: "05 Ene", time: "4:00 PM - 5:00 PM", type: "Teórica", topic: "Historia de LATAM (2)", hours: 1 }
-      ]},
-      { name: "Sara Palacio", totalHours: 6, sessions: [
+        ]
+      },
+      {
+        name: "Sara Palacio", totalHours: 6, sessions: [
           { date: "06 Ene", time: "2:00 PM - 4:00 PM", type: "Teórica", topic: "Teórica 1", hours: 2 },
           { date: "07 Ene", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "Teórica 2", hours: 2 },
           { date: "08 Ene", time: "10:00 AM - 12:00 PM", type: "Teórica", topic: "Teórica 3", hours: 2 }
-      ]},
-      { name: "José Londoño", totalHours: 5, sessions: [
+        ]
+      },
+      {
+        name: "José Londoño", totalHours: 5, sessions: [
           { date: "06 Ene", time: "8:00 PM - 10:00 PM", type: "Teórica", topic: "La Materia", hours: 2 },
           { date: "08 Ene", time: "7:00 PM - 10:00 PM", type: "Teórica", topic: "Métodos de Separación", hours: 3 }
-      ]},
-      { name: "Daniel Cuspoca", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Daniel Cuspoca", totalHours: 2, sessions: [
           { date: "07 Ene", time: "8:00 AM - 10:00 AM", type: "Teórica", topic: "Cinemática y Dinámica", hours: 2 }
-      ]},
-      { name: "Alexandra Nikol", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Alexandra Nikol", totalHours: 2, sessions: [
           { date: "07 Ene", time: "6:00 PM - 8:00 PM", type: "Práctica", topic: "Minisimulacro 2", hours: 2 }
-      ]},
-      { name: "Luis Gutiérrez", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Luis Gutiérrez", totalHours: 2, sessions: [
           { date: "09 Ene", time: "4:00 PM - 6:00 PM", type: "Práctica", topic: "Taller 7", hours: 2 }
-      ]},
-      { name: "Sofía Suarez", totalHours: 2, sessions: [
+        ]
+      },
+      {
+        name: "Sofía Suarez", totalHours: 2, sessions: [
           { date: "09 Ene", time: "6:00 PM - 8:00 PM", type: "Teórica", topic: "Narradores", hours: 2 }
-      ]}
+        ]
+      }
     ]
   }
 ];
@@ -159,13 +201,19 @@ const INITIAL_DATA = [
 const formatMoney = (amount) => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(amount);
 
 const openNequiApp = () => {
-  // 1. Intentar abrir con el esquema de URL
-  window.location.href = "nequi://";
-  
-  // 2. Fallback a la tienda si no abre en 2 segundos
+  // Crear un iframe invisible para abrir el deep link
+  const iframe = document.createElement('iframe');
+  iframe.style.display = 'none';
+  iframe.src = 'nequi://';
+  document.body.appendChild(iframe);
+
+  // Eliminar el iframe después de un segundo
   setTimeout(() => {
-    window.location.href = "https://play.google.com/store/apps/details?id=com.nequi.MobileApp";
-  }, 2000);
+    document.body.removeChild(iframe);
+  }, 1000);
+
+  // Opcional: Si después de 2.5 segundos quieres dar la opción de abrir el Play Store
+  // puedes mostrar un toast o notificación en lugar de redirigir automáticamente
 };
 
 // --- ICONOS SVG ---
@@ -174,20 +222,20 @@ const Icon = ({ children, className = "w-5 h-5" }) => (
 );
 
 const Icons = {
-  Logo: () => <Icon className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></Icon>,
-  Dashboard: () => <Icon><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></Icon>,
-  File: () => <Icon><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></Icon>,
-  Dollar: () => <Icon><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></Icon>,
-  Copy: () => <Icon><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></Icon>,
-  Check: () => <Icon><polyline points="20 6 9 17 4 12"/></Icon>,
-  Clock: () => <Icon><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></Icon>,
-  Users: () => <Icon><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></Icon>,
-  Down: () => <Icon><polyline points="6 9 12 15 18 9"/></Icon>,
-  Up: () => <Icon><polyline points="18 15 12 9 6 15"/></Icon>,
-  CreditCard: () => <Icon><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></Icon>,
-  Wallet: () => <Icon><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></Icon>,
-  X: () => <Icon><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></Icon>,
-  Smartphone: () => <Icon><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></Icon>
+  Logo: () => <Icon className="w-6 h-6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></Icon>,
+  Dashboard: () => <Icon><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></Icon>,
+  File: () => <Icon><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></Icon>,
+  Dollar: () => <Icon><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></Icon>,
+  Copy: () => <Icon><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" /></Icon>,
+  Check: () => <Icon><polyline points="20 6 9 17 4 12" /></Icon>,
+  Clock: () => <Icon><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></Icon>,
+  Users: () => <Icon><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></Icon>,
+  Down: () => <Icon><polyline points="6 9 12 15 18 9" /></Icon>,
+  Up: () => <Icon><polyline points="18 15 12 9 6 15" /></Icon>,
+  CreditCard: () => <Icon><rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" /></Icon>,
+  Wallet: () => <Icon><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4" /><path d="M4 6v12a2 2 0 0 0 2 2h14v-4" /><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z" /></Icon>,
+  X: () => <Icon><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></Icon>,
+  Smartphone: () => <Icon><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></Icon>
 };
 
 // --- MODAL COMPONENT ---
@@ -207,7 +255,7 @@ const PaymentModal = ({ account, onClose, onCopy }) => {
           <h3 className="font-bold text-lg">{account.name}</h3>
           <p className="text-indigo-200 text-xs uppercase tracking-widest font-semibold">{account.area}</p>
         </div>
-        
+
         <div className="p-6">
           <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 mb-6 text-center">
             <p className="text-xs font-bold text-slate-400 uppercase mb-1">Nequi / Daviplata</p>
@@ -215,23 +263,23 @@ const PaymentModal = ({ account, onClose, onCopy }) => {
           </div>
 
           <div className="grid grid-cols-1 gap-3">
-            <button 
+            <button
               onClick={() => onCopy(account.number, "Número")}
               className="flex items-center justify-center gap-2 w-full py-3 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition-colors active:scale-95"
             >
               <Icons.Copy />
               Copiar Solo Número
             </button>
-            <button 
+            <button
               onClick={() => onCopy(`${account.name}\nNequi: ${account.number}`, "Datos Completos")}
               className="flex items-center justify-center gap-2 w-full py-3 bg-white border border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-slate-50 transition-colors active:scale-95"
             >
               <Icons.File />
               Copiar Datos Completos
             </button>
-            
+
             {/* NUEVO BOTÓN ABRIR APP DENTRO DEL MODAL */}
-            <button 
+            <button
               onClick={openNequiApp}
               className="flex items-center justify-center gap-2 w-full py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 active:scale-95 mt-2"
             >
@@ -256,7 +304,7 @@ const Toast = ({ message }) => (
 
 // --- FLOATING NEQUI BUTTON (FAB GLOBAL) ---
 const NequiFloatingButton = () => (
-  <button 
+  <button
     onClick={openNequiApp}
     className="fixed bottom-20 right-6 z-40 bg-[#DA0081] text-white p-4 rounded-full shadow-2xl hover:bg-[#b5006b] hover:scale-110 transition-all duration-300 group"
     title="Abrir Nequi"
@@ -274,7 +322,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
 
   const cost = teacher.totalHours * hourlyRate;
   const nequiAccount = findAccount(teacher.name);
-  
+
   const getLong = () => {
     let text = `${teacher.name} (${teacher.totalHours} Horas Totales - ${weekRange})\n`;
     teacher.sessions.forEach(s => text += `- ${s.date} (${s.time}): Clase ${s.type} - ${s.topic} (${s.hours} horas).\n`);
@@ -296,9 +344,9 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
   return (
     <div className={`bg-white rounded-xl shadow-sm border transition-all duration-300 relative ${expanded ? 'border-indigo-300 ring-2 ring-indigo-50' : 'border-slate-200 hover:border-indigo-200'}`}>
       <div className="p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
-        
+
         {/* INFO PRINCIPAL */}
-        <div 
+        <div
           className="flex items-center gap-4 flex-1 cursor-pointer"
           onClick={() => setExpanded(!expanded)}
         >
@@ -321,12 +369,12 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
 
         {/* ACCIONES */}
         <div className="flex items-center gap-2 relative">
-          
+
           {/* BOTÓN NEQUI - ABRE MODAL GLOBAL */}
           {nequiAccount && (
-            <button 
-              onClick={(e) => { 
-                e.stopPropagation(); 
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
                 onOpenPayment(nequiAccount);
               }}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold transition-all border bg-purple-50 text-purple-700 border-purple-100 hover:bg-purple-100 active:scale-95"
@@ -336,7 +384,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
             </button>
           )}
 
-          <button 
+          <button
             onClick={(e) => { e.stopPropagation(); setExpanded(!expanded); }}
             className={`p-2 rounded-lg transition-colors ${expanded ? 'bg-indigo-50 text-indigo-600' : 'bg-slate-50 text-slate-400 hover:bg-slate-100'}`}
           >
@@ -379,7 +427,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
                 <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Vista Previa Reporte</h5>
                 <div className="flex bg-slate-100 p-0.5 rounded-lg">
                   {['detailed', 'short'].map(m => (
-                    <button 
+                    <button
                       key={m}
                       onClick={(e) => { e.stopPropagation(); setMode(m); }}
                       className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${mode === m ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
@@ -396,7 +444,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, hourlyRate, onCopy, onOpenPa
                 </pre>
               </div>
 
-              <button 
+              <button
                 onClick={(e) => { e.stopPropagation(); onCopy(previewText, mode === 'detailed' ? 'Oficial' : 'WhatsApp'); }}
                 className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs shadow-md shadow-indigo-100 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
               >
@@ -415,12 +463,12 @@ export default function App() {
   const [selectedWeek, setSelectedWeek] = useState(INITIAL_DATA[INITIAL_DATA.length - 1].id);
   const [rate, setRate] = useState(20000);
   const [toast, setToast] = useState(null);
-  
+
   // ESTADO PARA EL MODAL DE PAGO
   const [paymentAccount, setPaymentAccount] = useState(null);
 
   const current = INITIAL_DATA.find(w => w.id === selectedWeek);
-  
+
   const totalH = INITIAL_DATA.reduce((acc, w) => acc + w.teachers.reduce((t, teach) => t + teach.totalHours, 0), 0);
   const total$ = totalH * rate;
 
@@ -442,7 +490,7 @@ export default function App() {
 
   return (
     <div className="flex h-screen bg-slate-50 text-slate-800 font-sans overflow-hidden">
-      
+
       {/* 1. SIDEBAR ULTRA-COMPACTO */}
       <aside className="w-20 bg-slate-900 flex flex-col items-center py-6 z-30 flex-shrink-0 shadow-xl">
         <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg mb-8">
@@ -450,16 +498,16 @@ export default function App() {
         </div>
 
         <nav className="flex-1 space-y-4 w-full px-3">
-          <button 
-            onClick={() => setTab('reports')} 
+          <button
+            onClick={() => setTab('reports')}
             className={`w-full p-3 rounded-xl flex flex-col items-center gap-1 transition-all group ${tab === 'reports' ? 'bg-indigo-600/20 text-indigo-400' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'}`}
             title="Reportes"
           >
             <Icons.File />
             <span className="text-[10px] font-medium">Nómina</span>
           </button>
-          <button 
-            onClick={() => setTab('finance')} 
+          <button
+            onClick={() => setTab('finance')}
             className={`w-full p-3 rounded-xl flex flex-col items-center gap-1 transition-all group ${tab === 'finance' ? 'bg-indigo-600/20 text-indigo-400' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'}`}
             title="Finanzas"
           >
@@ -471,7 +519,7 @@ export default function App() {
 
       {/* 2. AREA PRINCIPAL */}
       <div className="flex-1 flex flex-col min-w-0">
-        
+
         {/* 2.1 HEADER UNIFICADO */}
         <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-20 flex-shrink-0">
           <div className="flex items-center gap-4">
@@ -483,9 +531,9 @@ export default function App() {
                 <div className="h-6 w-px bg-slate-200 mx-2 hidden md:block"></div>
                 <div className="flex items-center gap-2 overflow-x-auto max-w-[200px] md:max-w-none no-scrollbar">
                   {INITIAL_DATA.map(w => (
-                    <button 
-                      key={w.id} 
-                      onClick={() => setSelectedWeek(w.id)} 
+                    <button
+                      key={w.id}
+                      onClick={() => setSelectedWeek(w.id)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all ${selectedWeek === w.id ? 'bg-slate-900 text-white shadow-md' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
                     >
                       {w.name}
@@ -500,11 +548,11 @@ export default function App() {
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wide">Valor Hora</span>
             <div className="flex items-center gap-1">
               <span className="text-slate-400 font-bold text-sm">$</span>
-              <input 
-                type="number" 
-                value={rate} 
-                onChange={e => setRate(Number(e.target.value))} 
-                className="w-20 bg-transparent outline-none text-sm font-bold text-slate-800 text-right" 
+              <input
+                type="number"
+                value={rate}
+                onChange={e => setRate(Number(e.target.value))}
+                className="w-20 bg-transparent outline-none text-sm font-bold text-slate-800 text-right"
               />
             </div>
           </div>
@@ -513,7 +561,7 @@ export default function App() {
         {/* 2.2 CONTENIDO */}
         <main className="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth bg-slate-50/50">
           <div className="max-w-6xl mx-auto">
-            
+
             {tab === 'reports' && (
               <div className="space-y-6 pb-20 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="flex items-baseline justify-between">
@@ -547,12 +595,12 @@ export default function App() {
 
                 <div className="space-y-3">
                   {current.teachers.map((teacher, i) => (
-                    <TeacherRow 
-                      key={i} 
-                      teacher={teacher} 
-                      weekName={current.name} 
-                      weekRange={current.range} 
-                      hourlyRate={rate} 
+                    <TeacherRow
+                      key={i}
+                      teacher={teacher}
+                      weekName={current.name}
+                      weekRange={current.range}
+                      hourlyRate={rate}
                       onCopy={handleCopy}
                       onOpenPayment={setPaymentAccount} // Pasamos la función para abrir el modal
                     />
@@ -613,9 +661,9 @@ export default function App() {
       </div>
 
       {/* MODAL DE PAGO (RENDERIZADO EN LA RAÍZ) */}
-      <PaymentModal 
-        account={paymentAccount} 
-        onClose={() => setPaymentAccount(null)} 
+      <PaymentModal
+        account={paymentAccount}
+        onClose={() => setPaymentAccount(null)}
         onCopy={handleCopy}
       />
 
