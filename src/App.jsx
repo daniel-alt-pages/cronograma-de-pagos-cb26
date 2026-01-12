@@ -458,7 +458,7 @@ const TeacherRow = ({ teacher, weekRange, weekName, weekId, hourlyRate, onCopy, 
                       onClick={(e) => { e.stopPropagation(); setMode(m); }}
                       className={`px-3 py-1 text-[10px] font-bold rounded-md transition-all ${mode === m ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
                     >
-                      {m === 'detailed' ? 'Oficial' : 'WhatsApp'}
+                      {m === 'detailed' ? 'Plataforma' : 'Nequi'}
                     </button>
                   ))}
                 </div>
@@ -471,10 +471,10 @@ const TeacherRow = ({ teacher, weekRange, weekName, weekId, hourlyRate, onCopy, 
               </div>
 
               <button
-                onClick={(e) => { e.stopPropagation(); onCopy(previewText, mode === 'detailed' ? 'Oficial' : 'WhatsApp'); }}
+                onClick={(e) => { e.stopPropagation(); onCopy(previewText, mode === 'detailed' ? 'Descripción de la plataforma' : 'Nequi'); }}
                 className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-bold text-xs shadow-md shadow-indigo-100 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
               >
-                <Icons.Copy /> Copiar Reporte {mode === 'detailed' ? 'Oficial' : 'WhatsApp'}
+                <Icons.Copy /> Copiar Reporte {mode === 'detailed' ? 'Plataforma' : 'Nequi'}
               </button>
             </div>
           </div>
